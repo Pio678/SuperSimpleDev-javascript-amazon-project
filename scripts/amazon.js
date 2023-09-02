@@ -1,4 +1,8 @@
-//products are being loaded from another file
+//cart variable is imported from other cart.js
+import { cart } from "../data/cart";
+
+//products variable is imported from products.js
+import { products } from "../data/products";
 
 //productshtml stores html for list of out products
 productsHtml = "";
