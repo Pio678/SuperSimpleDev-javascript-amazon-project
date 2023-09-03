@@ -1,5 +1,5 @@
 //export means variables can be imported by another file
-export const cart = [
+export let cart = [
   {
     productId: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
     quantity: 1,
@@ -26,7 +26,22 @@ export function addToCart(productId) {
   else {
     cart.push({
       productId: productId,
-      quantity: 2,
+      quantity: 1,
     });
   }
+}
+
+export function removeFromCart(productId) {
+  //we create newCart array
+  const newCart = [];
+
+  cart.forEach((cartItem) => {
+    //we add all cartItems to new cart array
+    //except the one we want to delete
+    if (cartItem.productId !== productId) {
+      newCart.push(cartItem);
+    }
+    // we override cart with newCart
+    cart = newCart;
+  });
 }
